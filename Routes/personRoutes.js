@@ -71,10 +71,10 @@ router.delete('/:id',(req,res)=> {
         err ?  console.log(err) : res.json(data)
     }) })
 // Delete Many Documents with model.remove
-router.delete('delname/:name',(req,res)=> {
-  person.remove(req.params.name,(err,data)=> { 
-      err ?  console.log(err) : res.send('all persons named asma were deleted')
-  }) })
+router.delete('/delname/:name',(req,res)=> {
+    person.remove({ name:req.params.name},(err,data)=> { 
+      err ?  console.log(err) : res.send('all persons named maram were deleted')
+    })   })
 
   //Chain Search Query Helpers to Narrow Search Results
   router.get('/',(req,res)=> {
